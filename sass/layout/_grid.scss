@@ -1,0 +1,25 @@
+.grid {
+    display: grid;
+    column-gap: $grid-column-gap;
+    row-gap: $grid-row-gap;
+
+    &--2-cols {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    &--3-cols {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    &--4-cols {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    & {
+        @include respond(tab-port) {
+            grid-template-columns: 1fr;
+            row-gap: $grid-row-gap-small;
+            padding: 0 3rem;
+        }
+    }
+}
