@@ -1,4 +1,4 @@
-# Frontend Mentor - QR code component solution
+# Advanced CSS and Sass - Project
 
 This is the final project of the course [Advanced CSS and Sass](https://www.udemy.com/course/advanced-css-and-sass/).
 
