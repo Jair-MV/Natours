@@ -26,3 +26,38 @@
         animation-name: moveInRight;
     }
 }
+
+.heading-secondary {
+    div {
+        background-image: linear-gradient(
+            to right,
+            vars.$clr-primary-lt,
+            vars.$clr-primary-dk
+        );
+        background-clip: text;
+
+        font-size: 3.5rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        color: transparent;
+
+        transition: all 0.2s;
+    }
+
+    &:hover div {
+        transform: skewX(15deg) skewY(2deg) scale(1.1);
+        text-shadow: 0.5rem 1rem 2rem rgba(vars.$clr-ntrl-min, 0.2);
+    }
+}
+
+.heading-tertiary {
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.paragraph {
+    &:not(:last-child) {
+        margin-bottom: 3rem;
+    }
+}

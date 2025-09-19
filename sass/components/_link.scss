@@ -1,0 +1,25 @@
+@use "../abstracts/variables" as vars;
+
+.link {
+    &:link,
+    &:visited {
+        display: inline-block;
+        padding: 3px;
+        border-bottom: 1px solid currentColor;
+        color: vars.$clr-primary;
+        transition: all 0.2s;
+    }
+
+    &:hover {
+        background-color: vars.$clr-primary;
+        color: vars.$clr-ntrl-max;
+        box-shadow: 0 1rem 2rem rgba(vars.$clr-ntrl-min, 0.15);
+        border-bottom-color: vars.$clr-primary;
+        transform: translateY(-2px);
+    }
+
+    &:active {
+        box-shadow: 0 0.5rem 1rem rgba(vars.$clr-ntrl-min, 0.15);
+        transform: translateY(0);
+    }
+}

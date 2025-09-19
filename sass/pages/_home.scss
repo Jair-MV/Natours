@@ -28,3 +28,29 @@
         margin-bottom: 6rem;
     }
 }
+
+.section-about {
+    margin-top: -20vh;
+    padding: 25rem 0;
+    background-color: vars.$clr-base-lt-1;
+
+    > div {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 2rem;
+        row-gap: 8rem;
+
+        max-width: 114rem;
+        margin: 0 auto;
+    }
+
+    .heading-secondary {
+        max-width: max-content;
+        margin: 0 auto;
+        margin-bottom: 8rem;
+    }
+
+    .heading-tertiary {
+        margin-bottom: 2rem;
+    }
+}

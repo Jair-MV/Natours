@@ -1,0 +1,40 @@
+@use "../abstracts/variables" as vars;
+
+.composition {
+    position: relative;
+
+    img {
+        position: absolute;
+        max-width: 55%;
+        border-radius: 2px;
+        box-shadow: 0 1.5rem 4rem rgba(vars.$clr-ntrl-min, 0.4);
+        outline-offset: 2rem;
+        transition: all 0.2s;
+    }
+
+    img:hover {
+        z-index: 1;
+        box-shadow: 0 2.5rem 4rem rgba(vars.$clr-ntrl-min, 0.5);
+        outline: 1.5rem solid vars.$clr-primary;
+        transform: scale(1.05) translateY(-0.5rem);
+    }
+
+    &:hover img:not(:hover) {
+        transform: scale(0.95);
+    }
+
+    img:nth-child(1) {
+        top: -2rem;
+        left: 0;
+    }
+
+    img:nth-child(2) {
+        top: 2rem;
+        right: 0;
+    }
+
+    img:nth-child(3) {
+        top: 10rem;
+        left: 20%;
+    }
+}
