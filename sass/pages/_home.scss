@@ -1,0 +1,30 @@
+@use "../abstracts/variables" as vars;
+
+.section-hero {
+    height: 95vh;
+    background-image: linear-gradient(
+            to right bottom,
+            rgba(vars.$clr-primary-lt, 0.8),
+            rgba(vars.$clr-primary-dk, 0.8)
+        ),
+        url(../img/hero.jpg);
+    background-size: cover;
+    background-position: center;
+
+    clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+
+    > div {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        height: 100%;
+
+        transform: translateY(-200px);
+    }
+
+    .heading-primary {
+        margin-bottom: 6rem;
+    }
+}

@@ -1,0 +1,28 @@
+@use "../abstracts/variables" as vars;
+@use "../base/animations";
+
+.heading-primary {
+    text-transform: uppercase;
+    color: vars.$clr-ntrl-max;
+
+    span {
+        display: block;
+        animation-duration: 1s;
+        animation-timing-function: ease-out;
+    }
+
+    span:first-child {
+        font-size: 6rem;
+        letter-spacing: 35px;
+
+        animation-name: moveInLeft;
+    }
+
+    span:last-child {
+        font-size: 2rem;
+        font-weight: 700;
+        letter-spacing: 17.4px;
+
+        animation-name: moveInRight;
+    }
+}
