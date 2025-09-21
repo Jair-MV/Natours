@@ -1,0 +1,31 @@
+@use "../abstracts/variables" as vars;
+
+.feature-box {
+    padding: 2.5rem;
+    background-color: rgba(vars.$clr-ntrl-max, 0.8);
+    box-shadow: 0 1.5rem 4rem rgba(vars.$clr-ntrl-min, 0.15);
+    border-radius: 3px;
+    font-size: 1.5rem;
+    text-align: center;
+    transition: all 0.3s;
+
+    &:hover {
+        transform: translateY(-1.5rem) scale(1.03);
+    }
+
+    &__icon {
+        display: inline-block;
+        margin-bottom: 0.5rem;
+
+        background-image: linear-gradient(
+            to right,
+            vars.$clr-primary-lt,
+            vars.$clr-primary-dk
+        );
+        background-clip: text;
+
+        font-size: 6rem;
+        line-height: 1;
+        color: transparent;
+    }
+}

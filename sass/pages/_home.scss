@@ -37,8 +37,7 @@
     > div {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
-        column-gap: 2rem;
-        row-gap: 8rem;
+        gap: 6rem;
 
         max-width: 114rem;
         margin: 0 auto;
@@ -48,6 +47,36 @@
         max-width: max-content;
         margin: 0 auto;
         margin-bottom: 8rem;
+    }
+
+    .heading-tertiary {
+        margin-bottom: 2rem;
+    }
+}
+
+.section-features {
+    margin-top: -10rem;
+    padding: 20rem 0;
+    background-image: linear-gradient(
+            to right bottom,
+            rgba(vars.$clr-primary-lt, 0.8),
+            rgba(vars.$clr-primary-dk, 0.8)
+        ),
+        url(../img/nat-4.jpg);
+    background-size: cover;
+    background-position: center;
+
+    transform: skewY(-7deg);
+
+    > div {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 6rem;
+
+        max-width: 114rem;
+        margin: 0 auto;
+
+        transform: skewY(7deg);
     }
 
     .heading-tertiary {
