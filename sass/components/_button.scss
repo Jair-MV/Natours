@@ -53,6 +53,15 @@
         background-color: vars.$clr-ntrl-max;
     }
 
+    &--beta {
+        background-color: vars.$clr-primary;
+        color: vars.$clr-ntrl-max;
+    }
+
+    &--beta::before {
+        background-color: vars.$clr-primary;
+    }
+
     &--animated {
         animation-name: moveInBottom;
         animation-duration: 1s;
