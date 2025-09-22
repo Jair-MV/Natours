@@ -1,0 +1,57 @@
+@use "../abstracts/variables" as vars;
+
+.story {
+    max-width: 75%;
+    margin: 0 auto;
+    padding: 6rem;
+    background-color: rgba(vars.$clr-ntrl-max, 0.6);
+    border-radius: 3px;
+    box-shadow: 0 3rem 6rem rgba(vars.$clr-ntrl-min, 0.1);
+    transform: skewX(-12deg);
+
+    & > * {
+        transform: skewX(12deg);
+    }
+
+    &__shape {
+        position: relative;
+        width: 15rem;
+        height: 15rem;
+        margin-right: 3rem;
+        border-radius: 50%;
+        shape-outside: circle(50% at 50% 50%);
+        float: left;
+        overflow: hidden;
+    }
+
+    &__img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transform: scale(1.4);
+        transition: all 0.5s;
+    }
+
+    &:hover &__img {
+        transform: scale(1);
+        filter: blur(3px) brightness(80%);
+    }
+
+    &__caption {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        font-size: 1.7rem;
+        text-align: center;
+        text-transform: uppercase;
+        color: vars.$clr-ntrl-max;
+        opacity: 0;
+        transform: translate(-50%, 20%);
+        transition: all 0.5s;
+    }
+
+    &:hover &__caption {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
+}

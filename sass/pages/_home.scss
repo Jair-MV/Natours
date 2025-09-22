@@ -110,3 +110,33 @@
         margin: 10rem auto 0;
     }
 }
+
+.section-stories {
+    position: relative;
+    padding: 15rem 0;
+
+    > div:not(.bg-video) {
+        max-width: 114rem;
+        margin: 0 auto;
+    }
+
+    .heading-secondary {
+        max-width: max-content;
+        margin: 0 auto;
+        margin-bottom: 8rem;
+    }
+
+    .heading-tertiary {
+        margin-bottom: 1.5rem;
+    }
+
+    .story {
+        margin-bottom: 8rem;
+    }
+
+    .link {
+        display: block;
+        max-width: max-content;
+        margin: 0 auto;
+    }
+}
