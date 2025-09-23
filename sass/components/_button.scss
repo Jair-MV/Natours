@@ -10,8 +10,10 @@
         display: inline-block;
         padding: 1.5rem 4rem;
         border-radius: 100px;
+        border: none;
         text-transform: uppercase;
         transition: all 0.2s;
+        cursor: pointer;
     }
 
     &:hover {
@@ -19,7 +21,8 @@
         transform: translateY(-3px);
     }
 
-    &:active {
+    &:active,
+    &:focus {
         box-shadow: 0 5px 10px rgba(vars.$clr-ntrl-min, 0.2);
         transform: translateY(-1px);
     }

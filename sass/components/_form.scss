@@ -1,0 +1,93 @@
+@use "../abstracts/variables" as vars;
+
+.form {
+    max-width: 45%;
+    padding: 4rem;
+    padding-right: 0;
+
+    &__group:not(:last-child) {
+        margin-bottom: 2rem;
+    }
+
+    &__input {
+        display: block;
+        width: 100%;
+        padding: 1.5rem 2rem;
+        border-radius: 2px;
+        border: none;
+        font-size: 1.5rem;
+        background-color: rgba(vars.$clr-ntrl-max, 0.5);
+        border-bottom: 3px solid transparent;
+        transition: all 0.3s;
+
+        &:focus {
+            box-shadow: 0 1rem 2rem rgba(vars.$clr-ntrl-min, 0.1);
+            border-bottom: 3px solid vars.$clr-primary;
+            outline: none;
+        }
+
+        &:focus:invalid {
+            border-bottom: 3px solid vars.$clr-secondary-dk;
+        }
+
+        &::placeholder {
+            color: vars.$clr-base-dk-1;
+        }
+    }
+
+    &__label {
+        display: block;
+        margin-top: 0.7rem;
+        margin-left: 2rem;
+        font-size: 1.2rem;
+        font-weight: 700;
+        transition: all 0.3s;
+    }
+
+    &__input:placeholder-shown + &__label {
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-4rem);
+    }
+
+    &__radio-group {
+        display: inline-block;
+        width: 49%;
+    }
+
+    &__radio-input {
+        display: none;
+    }
+
+    &__radio-label {
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+        cursor: pointer;
+    }
+
+    &__radio-button {
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        width: 3rem;
+        height: 3rem;
+        border: 5px solid vars.$clr-primary;
+        border-radius: 50%;
+
+        &::after {
+            content: "";
+            display: inline-block;
+            width: 1.3rem;
+            height: 1.3rem;
+            border-radius: 50%;
+            background-color: vars.$clr-primary;
+            opacity: 0;
+            transition: all 0.2s;
+        }
+    }
+
+    &__radio-input:checked + &__radio-label &__radio-button::after {
+        opacity: 1;
+    }
+}

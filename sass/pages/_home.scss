@@ -140,3 +140,35 @@
         margin: 0 auto;
     }
 }
+
+.section-book {
+    padding: 15rem 0;
+    background-image: linear-gradient(
+        to right bottom,
+        vars.$clr-primary-lt,
+        vars.$clr-primary-dk
+    );
+}
+
+.book {
+    max-width: 114rem;
+    margin: 0 auto;
+
+    background-image: linear-gradient(
+            105deg,
+            rgba(vars.$clr-ntrl-max, 0.9) 0% 50%,
+            transparent 50%
+        ),
+        url(../img/nat-10.jpg);
+    background-size: cover;
+    border-radius: 3px;
+    box-shadow: 0 1.5rem 4rem rgba(vars.$clr-ntrl-min, 0.15);
+
+    .heading-secondary {
+        margin-bottom: 4rem;
+    }
+
+    .btn {
+        margin-top: 4rem;
+    }
+}
