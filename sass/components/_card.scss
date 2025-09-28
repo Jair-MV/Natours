@@ -32,22 +32,6 @@
             backface-visibility: hidden;
 
             transform: rotateY(180deg);
-
-            p:first-child,
-            p:last-of-type {
-                color: vars.$clr-ntrl-max;
-            }
-
-            p:first-child {
-                font-size: 1.4rem;
-                text-transform: uppercase;
-            }
-
-            p:last-of-type {
-                margin-bottom: 8rem;
-                font-size: 6rem;
-                font-weight: 100;
-            }
         }
 
         &--back-a {
@@ -123,9 +107,7 @@
             url(../img/nat-7.jpg);
     }
 
-    &__heading--a,
-    &__heading--b,
-    &__heading--c {
+    &__heading {
         position: absolute;
         top: 12rem;
         right: 2rem;
@@ -137,35 +119,33 @@
         text-transform: uppercase;
         text-align: right;
         color: vars.$clr-ntrl-max;
+    }
 
-        span {
+    &__heading-span {
+        &--a,
+        &--b,
+        &--c {
             padding: 1rem 1.5rem;
             box-decoration-break: clone;
         }
-    }
 
-    &__heading--a {
-        span {
+        &--a {
             background-image: linear-gradient(
                 to right bottom,
                 rgba(vars.$clr-secondary-lt, 0.85),
                 rgba(vars.$clr-secondary-dk, 0.85)
             );
         }
-    }
 
-    &__heading--b {
-        span {
+        &--b {
             background-image: linear-gradient(
                 to right bottom,
                 rgba(vars.$clr-primary-lt, 0.85),
                 rgba(vars.$clr-primary-dk, 0.85)
             );
         }
-    }
 
-    &__heading--c {
-        span {
+        &--c {
             background-image: linear-gradient(
                 to right bottom,
                 rgba(vars.$clr-tertiary-lt, 0.85),
@@ -178,15 +158,31 @@
         max-width: 75%;
         margin: 0 auto;
         padding: 3rem 0;
+    }
 
-        li {
-            padding: 1rem;
-            font-size: 1.5rem;
-            text-align: center;
+    &__list-item {
+        padding: 1rem;
+        font-size: 1.5rem;
+        text-align: center;
 
-            &:not(:last-child) {
-                border-bottom: 1px solid vars.$clr-base-lt-2;
-            }
+        &:not(:last-child) {
+            border-bottom: 1px solid vars.$clr-base-lt-2;
         }
+    }
+
+    &__pricing-text,
+    &__pricing-number {
+        color: vars.$clr-ntrl-max;
+    }
+
+    &__pricing-text {
+        font-size: 1.4rem;
+        text-transform: uppercase;
+    }
+
+    &__pricing-number {
+        margin-bottom: 8rem;
+        font-size: 6rem;
+        font-weight: 100;
     }
 }
