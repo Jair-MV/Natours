@@ -108,9 +108,35 @@
                     </div>
 
                     <div class="composition">
-                        <img src="img/nat-1-large.jpg" alt="" />
-                        <img src="img/nat-2-large.jpg" alt="" />
-                        <img src="img/nat-3-large.jpg" alt="" />
+                        <img
+                            srcset="
+                                img/nat-1.jpg        300w,
+                                img/nat-1-large.jpg 1000w
+                            "
+                            sizes="(max-width: 56.25em) 20vw, (max-width: 37.5em) 30vw, 300px"
+                            src="img/nat-1-large.jpg"
+                            alt="Photo 1"
+                        />
+
+                        <img
+                            srcset="
+                                img/nat-2.jpg        300w,
+                                img/nat-2-large.jpg 1000w
+                            "
+                            sizes="(max-width: 56.25em) 20vw, (max-width: 37.5em) 30vw, 300px"
+                            src="img/nat-2-large.jpg"
+                            alt="Photo 2"
+                        />
+
+                        <img
+                            srcset="
+                                img/nat-3.jpg        300w,
+                                img/nat-3-large.jpg 1000w
+                            "
+                            sizes="(max-width: 56.25em) 20vw, (max-width: 37.5em) 30vw, 300px"
+                            src="img/nat-3-large.jpg"
+                            alt="Photo 3"
+                        />
                     </div>
                 </div>
             </section>
@@ -188,7 +214,7 @@
                             <p class="card__pricing-text">Only</p>
                             <p class="card__pricing-number">$297</p>
 
-                            <a href="#popup" class="btn btn--alpha"
+                            <a href="#popup" class="btn btn--alpha card__btn"
                                 >Book now!</a
                             >
                         </div>
@@ -221,7 +247,7 @@
                             <p class="card__pricing-text">Only</p>
                             <p class="card__pricing-number">$497</p>
 
-                            <a href="#popup" class="btn btn--alpha"
+                            <a href="#popup" class="btn btn--alpha card__btn"
                                 >Book now!</a
                             >
                         </div>
@@ -254,7 +280,7 @@
                             <p class="card__pricing-text">Only</p>
                             <p class="card__pricing-number">$897</p>
 
-                            <a href="#popup" class="btn btn--alpha"
+                            <a href="#popup" class="btn btn--alpha card__btn"
                                 >Book now!</a
                             >
                         </div>
@@ -266,7 +292,7 @@
 
             <section class="section-stories">
                 <div class="bg-video">
-                    <video class="bg-video__content" autoplay loop>
+                    <video class="bg-video__content" autoplay loop playsinline>
                         <source src="img/video.mp4" type="video/mp4" />
                         <source src="img/video.webm" type="video/webm" />
                         Your browser is not supported
@@ -412,11 +438,20 @@
         </main>
 
         <footer class="footer">
-            <img
-                src="img/logo-green-2x.png"
-                alt="Full logo"
-                class="footer__logo"
-            />
+            <picture class="footer__logo">
+                <source
+                    srcset="
+                        img/logo-green-small-1x.png 1x,
+                        img/logo-green-small-2x.png 2x
+                    "
+                    media="(max-width: 37.5em)"
+                />
+                <img
+                    srcset="img/logo-green-1x.png 1x, img/logo-green-2x.png 2x"
+                    alt="Full logo"
+                    src="img/logo-green-2x.png"
+                />
+            </picture>
 
             <div>
                 <ul class="footer-nav-list">

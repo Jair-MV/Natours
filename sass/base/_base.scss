@@ -1,3 +1,5 @@
+@use "../abstracts/mixins" as mix;
+
 *,
 *::before,
 *::after {
@@ -11,6 +13,18 @@ html {
     box-sizing: border-box;
     font-size: 62.5%; /* 1rem = 10px */
     scroll-behavior: smooth;
+
+    @include mix.respond(tab-land) {
+        font-size: 56.25%;
+    }
+
+    @include mix.respond(tab-port) {
+        font-size: 50%;
+    }
+
+    @include mix.respond(big-desktop) {
+        font-size: 75%;
+    }
 }
 
 body {
@@ -21,6 +35,10 @@ body {
     font-weight: 400;
     line-height: 1.7;
     color: #666;
+
+    @include mix.respond(tab-port) {
+        padding: 0;
+    }
 }
 
 img,

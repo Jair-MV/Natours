@@ -1,17 +1,30 @@
 @use "../abstracts/variables" as vars;
+@use "../abstracts/mixins" as mix;
 
 .section-hero {
-    height: 95vh;
+    height: vars.$hero-height;
+    min-height: vars.$hero-height-min;
+    max-height: vars.$hero-height-max;
     background-image: linear-gradient(
             to right bottom,
             rgba(vars.$clr-primary-lt, 0.8),
             rgba(vars.$clr-primary-dk, 0.8)
         ),
-        url(../img/hero.jpg);
+        url(../img/hero-small.jpg);
     background-size: cover;
     background-position: center;
 
-    clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+    clip-path: polygon(0 0, 100% 0, 100% var(--clip-path-coord), 0 100%);
+
+    @media (min-resolution: 192dpi) and (min-width: 37.5em),
+        (min-width: 125em) {
+        background-image: linear-gradient(
+                to right bottom,
+                rgba(vars.$clr-primary-lt, 0.8),
+                rgba(vars.$clr-primary-dk, 0.8)
+            ),
+            url(../img/hero.jpg);
+    }
 
     > div {
         display: flex;
@@ -21,7 +34,7 @@
 
         height: 100%;
 
-        transform: translateY(-200px);
+        transform: translateY(-100px);
     }
 
     .heading-primary {
@@ -30,8 +43,11 @@
 }
 
 .section-about {
-    margin-top: -20vh;
-    padding: 25rem 0;
+    margin-top: calc(var(--gap-compensaiton) * -1);
+    padding-top: calc(var(--gap-compensaiton) + 6rem);
+    padding-bottom: calc(vars.$section-features-gap-compensation * 2 + 6rem);
+    padding-left: 3rem;
+    padding-right: 3rem;
     background-color: vars.$clr-base-lt-1;
 
     > div {
@@ -41,22 +57,36 @@
 
         max-width: 114rem;
         margin: 0 auto;
+
+        @include mix.respond(tab-port) {
+            grid-template-columns: 1fr;
+
+            max-width: 75rem;
+        }
     }
 
     .heading-secondary {
         max-width: max-content;
         margin: 0 auto;
         margin-bottom: 8rem;
+
+        @include mix.respond(phone) {
+            margin-bottom: 5rem;
+        }
     }
 
     .heading-tertiary {
         margin-bottom: 2rem;
+        @include mix.respond(phone) {
+            margin-bottom: 1.5rem;
+        }
     }
 }
 
 .section-features {
-    margin-top: -10rem;
-    padding: 20rem 0;
+    margin-top: calc(vars.$section-features-gap-compensation * -1);
+    margin-bottom: calc(vars.$section-features-gap-compensation * -1);
+    padding: 20rem 3rem;
     background-image: linear-gradient(
             to right bottom,
             rgba(vars.$clr-primary-lt, 0.8),
@@ -66,7 +96,12 @@
     background-size: cover;
     background-position: center;
 
-    transform: skewY(-7deg);
+    // prettier-ignore
+    transform: skewY(- vars.$section-features-skew-deg);
+
+    @include mix.respond(phone) {
+        padding: 15rem 3rem;
+    }
 
     > div {
         display: grid;
@@ -76,7 +111,19 @@
         max-width: 114rem;
         margin: 0 auto;
 
-        transform: skewY(7deg);
+        transform: skewY(vars.$section-features-skew-deg);
+
+        @include mix.respond(tab-port) {
+            grid-template-columns: 1fr 1fr;
+
+            max-width: 75rem;
+        }
+
+        @include mix.respond(phone) {
+            grid-template-columns: 1fr;
+
+            max-width: 40rem;
+        }
     }
 
     .heading-tertiary {
@@ -85,9 +132,14 @@
 }
 
 .section-tours {
-    margin-top: -10rem;
-    padding: 25rem 0 15rem;
+    // padding: 25rem 3rem 15rem;
+    padding: 0 3rem 12rem;
+    padding-top: calc(vars.$section-features-gap-compensation * 2 + 6rem);
     background-color: vars.$clr-base-lt-1;
+
+    @include mix.respond(phone) {
+        padding-bottom: 8rem;
+    }
 
     > div {
         display: grid;
@@ -96,6 +148,17 @@
 
         max-width: 114rem;
         margin: 0 auto;
+
+        @include mix.respond(tab-land) {
+            gap: 2rem;
+        }
+
+        @include mix.respond(tab-port) {
+            grid-template-columns: 1fr;
+            gap: 6rem;
+
+            max-width: 50rem;
+        }
     }
 
     .heading-secondary {
@@ -104,7 +167,7 @@
         margin-bottom: 8rem;
     }
 
-    .btn {
+    > .btn {
         display: block;
         max-width: max-content;
         margin: 10rem auto 0;
@@ -113,7 +176,11 @@
 
 .section-stories {
     position: relative;
-    padding: 15rem 0;
+    padding: 15rem 3rem;
+
+    @include mix.respond(phone) {
+        padding: 8rem 3rem;
+    }
 
     > div:not(.bg-video) {
         max-width: 114rem;
@@ -142,12 +209,16 @@
 }
 
 .section-book {
-    padding: 15rem 0;
+    padding: 15rem 3rem;
     background-image: linear-gradient(
         to right bottom,
         vars.$clr-primary-lt,
         vars.$clr-primary-dk
     );
+
+    @include mix.respond(phone) {
+        padding: 8rem 3rem;
+    }
 }
 
 .book {
@@ -163,6 +234,17 @@
     background-size: cover;
     border-radius: 3px;
     box-shadow: 0 1.5rem 4rem rgba(vars.$clr-ntrl-min, 0.15);
+
+    @include mix.respond(tab-port) {
+        max-width: 60rem;
+
+        background-image: linear-gradient(
+                105deg,
+                rgba(vars.$clr-ntrl-max, 0.9) 0%,
+                rgba(vars.$clr-ntrl-max, 0.9) 100%
+            ),
+            url(../img/nat-10.jpg);
+    }
 
     .heading-secondary {
         margin-bottom: 4rem;

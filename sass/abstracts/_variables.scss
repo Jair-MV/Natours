@@ -1,3 +1,5 @@
+@use "../abstracts/mixins" as mix;
+
 $clr-primary: #54c47a;
 $clr-primary-lt: #80d671;
 $clr-primary-dk: #27b485;
@@ -18,3 +20,46 @@ $clr-base-lt-2: #eee;
 
 $clr-base-dk-1: #999;
 $clr-base-dk-2: #333;
+
+// Section hero gap fix
+$hero-height: 95vh;
+$hero-height-min: 67.5rem;
+$hero-height-max: 125.5rem;
+
+$hero-actual-height: clamp($hero-height-min, $hero-height, $hero-height-max);
+
+:root {
+    --coord-offset: 22rem;
+    --clip-path-coord: calc(#{$hero-actual-height} - var(--coord-offset));
+    --gap-compensaiton: var(--clip-path-coord);
+
+    @include mix.respond(tab-land) {
+        --coord-offset: 16rem;
+    }
+
+    @include mix.respond(tab-port) {
+        --coord-offset: 10rem;
+    }
+
+    @include mix.respond(phone) {
+        --coord-offset: 8rem;
+    }
+}
+
+// Section features gap fix
+/* 
+    Desplazamiento en y (Δy)
+    Δy = tan(θ) * w
+
+    Nota: El dezplazamiento considera a ambos lados, superior e inferior. Dividir entre 2 para un solo lado.
+
+    Forzar % a px? Solo resta 1px ✅
+*/
+$section-features-skew-deg: 7deg;
+$section-features-width: 100%;
+$pixel-converter: 1px;
+
+$section-features-gap-compensation: calc(
+    tan($section-features-skew-deg) *
+        ($section-features-width - $pixel-converter) / 2
+);

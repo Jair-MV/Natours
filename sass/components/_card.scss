@@ -1,14 +1,25 @@
 @use "../abstracts/variables" as vars;
+@use "../abstracts/mixins" as mix;
 
 .card {
     position: relative;
     perspective: 150rem;
+
+    @media (hover: none) {
+        background-color: vars.$clr-ntrl-max;
+        border-radius: 3px;
+    }
 
     &__side {
         border-radius: 3px;
         box-shadow: 0 1.5rem 4rem rgba(vars.$clr-ntrl-min, 0.15);
         transition: all 0.8s ease;
         overflow: hidden;
+
+        @media (hover: none) {
+            border-radius: 0;
+            box-shadow: none;
+        }
 
         &--front {
             background-color: vars.$clr-ntrl-max;
@@ -32,6 +43,14 @@
             backface-visibility: hidden;
 
             transform: rotateY(180deg);
+
+            @media (hover: none) {
+                position: static;
+                height: auto;
+                padding: 6rem 0 4rem;
+                transform: rotateY(360deg);
+                clip-path: polygon(0 15%, 100% 0, 100% 100%, 0 100%);
+            }
         }
 
         &--back-a {
@@ -62,6 +81,10 @@
     &:hover &__side {
         &--front {
             transform: rotateY(180deg);
+
+            @media (hover: none) {
+                transform: rotateY(0);
+            }
         }
 
         &--back-a,
@@ -158,6 +181,10 @@
         max-width: 75%;
         margin: 0 auto;
         padding: 3rem 0;
+
+        @media (hover: none) {
+            padding-bottom: 0;
+        }
     }
 
     &__list-item {
@@ -184,5 +211,15 @@
         margin-bottom: 8rem;
         font-size: 6rem;
         font-weight: 100;
+
+        @include mix.respond(tab-port) {
+            margin-bottom: 5rem;
+        }
+    }
+
+    @include mix.respond(tab-port) {
+        &__btn {
+            margin: 0;
+        }
     }
 }

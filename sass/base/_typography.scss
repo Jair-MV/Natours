@@ -1,4 +1,5 @@
 @use "../abstracts/variables" as vars;
+@use "../abstracts/mixins" as mix;
 @use "../base/animations";
 
 .heading-primary {
@@ -16,6 +17,11 @@
         letter-spacing: 35px;
 
         animation-name: moveInLeft;
+
+        @include mix.respond(phone) {
+            font-size: 5rem;
+            letter-spacing: 1rem;
+        }
     }
 
     span:last-child {
@@ -24,6 +30,10 @@
         letter-spacing: 17.4px;
 
         animation-name: moveInRight;
+
+        @include mix.respond(phone) {
+            letter-spacing: 0.5rem;
+        }
     }
 }
 
@@ -43,6 +53,14 @@
         color: transparent;
 
         transition: all 0.2s;
+
+        @include mix.respond(tab-port) {
+            font-size: 2.5rem;
+        }
+
+        @include mix.respond(phone) {
+            font-size: 2rem;
+        }
     }
 
     &:hover div {

@@ -1,4 +1,5 @@
 @use "../abstracts/variables" as vars;
+@use "../abstracts/mixins" as mix;
 
 .story {
     max-width: 75%;
@@ -9,8 +10,18 @@
     box-shadow: 0 3rem 6rem rgba(vars.$clr-ntrl-min, 0.1);
     transform: skewX(-12deg);
 
+    @include mix.respond(phone) {
+        max-width: none;
+        padding: 4rem;
+        transform: skewX(0);
+    }
+
     & > * {
         transform: skewX(12deg);
+
+        @include mix.respond(phone) {
+            transform: skewX(0);
+        }
     }
 
     &__shape {
