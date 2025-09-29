@@ -24,7 +24,7 @@ This is a project I built during an advanced CSS course. It simulates a website 
 ### 🔗 Links
 
 -   Solution URL: [https://github.com/Jair-MV/Natours](https://github.com/jmv-dev/Natours)
--   Live Site URL: [https://natours-jmv.netlify.app](https://natours-jmv.netlify.app)
+-   Live Site URL: [https://natours-jmv-mx.netlify.app](https://natours-jmv-mx.netlify.app)
 
 ## 🛠️ My process
 
