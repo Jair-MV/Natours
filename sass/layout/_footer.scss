@@ -43,8 +43,10 @@
 
     .footer-nav-list {
         display: inline-flex;
-        gap: 1.5rem;
         justify-self: start;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        gap: 1.5rem;
         padding-top: 2rem;
         border-top: 1px solid vars.$clr-base-lt-2;
 
