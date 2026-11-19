@@ -66,9 +66,9 @@
                             </a>
                         </li>
                         <li class="site-menu__item">
-                            <span class="site-menu__label">
+                            <a class="site-menu__label" href="#benefits">
                                 <span class="site-menu__number" aria-hidden="true">02</span> Your benefits
-                            </span>
+                            </a>
                         </li>
                         <li class="site-menu__item">
                             <span class="site-menu__label">
@@ -125,8 +125,7 @@
                             hic, facilis eius ex sequi numquam nihil.
                         </p>
 
-                        <!-- Becomes a link when the Benefits section is available. -->
-                        <span class="about__more">Learn more &rarr;</span>
+                        <a class="about__more" href="#benefits">Learn more &rarr;</a>
                     </div>
 
                     <div class="photo-composition">
@@ -161,6 +160,58 @@
                             alt="A hiker crossing a narrow mountain ridge at sunset"
                         />
                     </div>
+                </div>
+            </section>
+
+            <section class="benefits" id="benefits" aria-labelledby="benefits-title" tabindex="-1">
+                <h2 class="visually-hidden" id="benefits-title">Your benefits</h2>
+
+                <svg width="0" height="0" aria-hidden="true" focusable="false">
+                    <defs>
+                        <linearGradient id="benefit-icon-gradient">
+                            <stop class="benefits__icon-stop benefits__icon-stop--light" offset="0%" />
+                            <stop class="benefits__icon-stop benefits__icon-stop--dark" offset="100%" />
+                        </linearGradient>
+                    </defs>
+                </svg>
+
+                <div class="benefits__panel">
+                    <ul class="benefits__grid" role="list">
+                        <li class="benefit-card">
+                            <svg class="benefit-card__icon" viewBox="0 0 48 48" stroke="url(#benefit-icon-gradient)" aria-hidden="true" focusable="false">
+                                <circle cx="24" cy="24" r="21" />
+                                <ellipse cx="24" cy="24" rx="11" ry="21" />
+                                <path d="M3 24h42M24 3v42M8 10.5c8.5 8 23.5 8 32 0M8 37.5c8.5-8 23.5-8 32 0" />
+                            </svg>
+                            <h3 class="benefit-card__title">Explore the world</h3>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero at dolor velit? Lorem ipsum dolor sit.</p>
+                        </li>
+
+                        <li class="benefit-card">
+                            <svg class="benefit-card__icon" viewBox="0 0 48 48" stroke="url(#benefit-icon-gradient)" aria-hidden="true" focusable="false">
+                                <circle cx="24" cy="26" r="19" />
+                                <path d="M20 7V6a4 4 0 0 1 8 0v1M24 7v4m0 30v4M5 26h4m30 0h4M33 17l-5.5 12.5L15 35l5.5-12.5L33 17ZM20.5 22.5l7 7" />
+                            </svg>
+                            <h3 class="benefit-card__title">Meet nature</h3>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero at dolor velit?</p>
+                        </li>
+
+                        <li class="benefit-card">
+                            <svg class="benefit-card__icon" viewBox="0 0 48 48" stroke="url(#benefit-icon-gradient)" aria-hidden="true" focusable="false">
+                                <path d="M3 10l14-5 14 5 14-5v32l-14 6-14-5-14 5V10Zm14-5v33m14-28v33" />
+                            </svg>
+                            <h3 class="benefit-card__title">Find your way</h3>
+                            <p>Lorem ipsum dolor sit amet adipisicing elit. Libero at dolor velit? Lorem ipsum dolor sit.</p>
+                        </li>
+
+                        <li class="benefit-card">
+                            <svg class="benefit-card__icon" viewBox="0 0 48 48" stroke="url(#benefit-icon-gradient)" aria-hidden="true" focusable="false">
+                                <path d="M24 43S3 30 3 17C3 4 20 2 24 14 28 2 45 4 45 17c0 13-21 26-21 26Z" />
+                            </svg>
+                            <h3 class="benefit-card__title">Live a healthier life</h3>
+                            <p>Lorem sit amet consectetur elit. Libero at dolor velit? Lorem ipsum dolor sit.</p>
+                        </li>
+                    </ul>
                 </div>
             </section>
         </main>

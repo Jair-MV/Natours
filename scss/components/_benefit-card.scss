@@ -1,0 +1,36 @@
+.benefit-card {
+    padding: 2.5rem;
+
+    font-size: 1.5rem;
+    text-align: center;
+
+    background: hsl(var(--clr-neutral-max) / 80%);
+    border-radius: 3px;
+    box-shadow: 0 1.5rem 4rem hsl(var(--clr-neutral-min) / 15%);
+
+    @media (hover: hover) and (prefers-reduced-motion: no-preference) {
+        transition: transform 0.3s;
+
+        &:hover {
+            transform: translateY(-1.5rem) scale(1.03);
+        }
+    }
+}
+
+.benefit-card__icon {
+    width: 6rem;
+    height: 6rem;
+    margin: 0 auto 0.5rem;
+
+    fill: none;
+    stroke-width: 1.5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.benefit-card__title {
+    margin-bottom: 2rem;
+
+    font-weight: 700;
+    text-transform: uppercase;
+}

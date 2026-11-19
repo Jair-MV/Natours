@@ -12,3 +12,13 @@
         transform: translateY(calc(-100% - 2rem));
     }
 }
+
+.visually-hidden {
+    position: absolute;
+
+    width: 1px;
+    height: 1px;
+
+    clip-path: inset(50%);
+    overflow: hidden;
+}

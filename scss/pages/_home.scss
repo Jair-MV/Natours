@@ -155,4 +155,82 @@
     color: hsl(var(--clr-primary));
 
     border-bottom: 1px solid currentColor;
+
+    transition: background-color 0.2s, color 0.2s, box-shadow 0.2s, transform 0.2s;
+
+    &:hover {
+        color: hsl(var(--clr-footer));
+
+        background-color: hsl(var(--clr-primary));
+        border-bottom-color: hsl(var(--clr-primary));
+        box-shadow: 0 1rem 2rem hsl(var(--clr-neutral-min) / 15%);
+
+        @media (prefers-reduced-motion: no-preference) {
+            transform: translateY(-2px);
+        }
+    }
+}
+
+.benefits {
+    position: relative;
+
+    background: hsl(var(--clr-surface));
+    container-type: inline-size;
+}
+
+.benefits__panel {
+    --benefits-cut-offset: calc(100cqw * tan(7deg));
+    --benefits-padding: 20rem;
+
+    position: relative;
+
+    padding: calc(var(--benefits-padding) + var(--benefits-cut-offset) / 2) var(--layout-gutter);
+
+    isolation: isolate;
+
+    &::before {
+        content: "";
+
+        position: absolute;
+        inset: 0;
+        z-index: -1;
+
+        background:
+            linear-gradient(to right bottom, hsl(var(--clr-primary-light) / 80%), hsl(var(--clr-primary-dark) / 80%)),
+            url("../assets/nat-4.jpg") center / cover;
+        clip-path: polygon(0 var(--benefits-cut-offset), 100% 0, 100% calc(100% - var(--benefits-cut-offset)), 0 100%);
+    }
+
+    @media (width <= vars.$bp-phone) {
+        --benefits-padding: 15rem;
+    }
+}
+
+.benefits__grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: var(--layout-column-gap);
+
+    max-width: var(--layout-max-width);
+    margin: 0 auto;
+
+    @media (width <= vars.$bp-tablet-portrait) {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+
+        max-width: 75rem;
+    }
+
+    @media (width <= vars.$bp-phone) {
+        grid-template-columns: minmax(0, 1fr);
+
+        max-width: 40rem;
+    }
+}
+
+.benefits__icon-stop--light {
+    stop-color: hsl(var(--clr-primary-light));
+}
+
+.benefits__icon-stop--dark {
+    stop-color: hsl(var(--clr-primary-dark));
 }
