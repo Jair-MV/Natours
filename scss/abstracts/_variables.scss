@@ -1,21 +1,36 @@
+$bp-phone: 600px;
+$bp-tablet-portrait: 900px;
+$bp-tablet-landscape: 1200px;
+$bp-wide-desktop: 1800px;
+
 :root {
-    --clr-base: ;
-
-    --clr-primary: ;
-
-    --clr-secondary: ;
+    --clr-primary: 140 49% 55%;
+    --clr-primary-light: 111 55% 64%;
+    --clr-primary-dark: 160 64% 43%;
+    --clr-secondary-light: 44 100% 50%;
+    --clr-secondary-dark: 21 100% 59%;
+    --clr-tertiary-light: 209 100% 58%;
+    --clr-tertiary-dark: 246 95% 62%;
 
     --clr-neutral-min: 0 0% 0%;
     --clr-neutral-max: 0 0% 100%;
+    --clr-base: 0 0% 40%;
+    --clr-muted: 0 0% 60%;
+    --clr-surface: 0 0% 97%;
+    --clr-border: 0 0% 93%;
+    --clr-footer: 0 0% 20%;
 
-    --clr-success: ;
-    --clr-warning: ;
-    --clr-error: ;
-
+    --ff-base: "Lato", sans-serif;
     --fs-base: 1.6rem;
+    --fs-hero-title: 6rem;
+    --fs-hero-subtitle: 2rem;
+    --fs-section-title: 3.5rem;
+    --fs-tour-title: 2.8rem;
+    --fs-tour-price: 6rem;
+    --lh-base: 1.7;
 
-    --ff-base: sans-serif;
-    --ff-alt-alpha: ;
-    --ff-alt-beta: ;
-    --ff-icon: ;
+    --layout-max-width: 114rem;
+    --layout-gutter: 3rem;
+    --layout-column-gap: 6rem;
+    --space-section-title: 8rem;
 }
