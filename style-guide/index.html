@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Natours — Guía de estilo</title>
+        <link rel="icon" href="../assets/favicon.png" type="image/png" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700&display=swap" rel="stylesheet" />
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <a class="skip-link" href="#contenido">Saltar al contenido</a>
+
+        <header class="guide-hero">
+            <img src="../assets/logo-white.png" width="70" alt="Natours" />
+            <p class="guide-hero__label">Referencia visual · Proyecto original</p>
+            <h1 class="guide-hero__title">Guía de estilo</h1>
+            <p class="guide-hero__description">Paleta, tipografía y componentes de Natours para orientar la reescritura.</p>
+        </header>
+
+        <nav class="guide-nav" aria-label="Índice de la guía">
+            <a href="#color">Color</a>
+            <a href="#tipografia">Tipografía</a>
+            <a href="#espaciado">Espaciado</a>
+            <a href="#componentes">Componentes</a>
+            <a href="#capturas">Capturas</a>
+        </nav>
+
+        <main class="guide" id="contenido">
+            <section class="guide-section" id="color">
+                <h2>Color</h2>
+                <p>El verde identifica la marca; el naranja, el verde y el azul-violeta distinguen las tres tarjetas de tours. Los valores HEX son los originales; los HSL están redondeados a enteros.</p>
+
+                <h3>Marca y acentos</h3>
+                <ul class="swatches">
+                    <li class="swatch swatch--primary">Verde principal <code>#54C47A</code><code>hsl(140 49% 55%)</code></li>
+                    <li class="swatch swatch--primary-light">Verde claro <code>#80D671</code><code>hsl(111 55% 64%)</code></li>
+                    <li class="swatch swatch--primary-dark">Verde oscuro <code>#27B485</code><code>hsl(160 64% 43%)</code></li>
+                    <li class="swatch swatch--secondary-light">Ámbar <code>#FFB900</code><code>hsl(44 100% 50%)</code></li>
+                    <li class="swatch swatch--secondary-dark">Naranja <code>#FF7730</code><code>hsl(21 100% 59%)</code></li>
+                    <li class="swatch swatch--tertiary-light">Azul <code>#2998FF</code><code>hsl(209 100% 58%)</code></li>
+                    <li class="swatch swatch--tertiary-dark">Violeta <code>#5643FA</code><code>hsl(246 95% 62%)</code></li>
+                </ul>
+
+                <h3>Neutros</h3>
+                <ul class="swatches">
+                    <li class="swatch swatch--white">Blanco <code>#FFFFFF</code><code>hsl(0 0% 100%)</code></li>
+                    <li class="swatch swatch--surface">Fondo claro <code>#F7F7F7</code><code>hsl(0 0% 97%)</code></li>
+                    <li class="swatch swatch--border">Separador <code>#EEEEEE</code><code>hsl(0 0% 93%)</code></li>
+                    <li class="swatch swatch--muted">Placeholder <code>#999999</code><code>hsl(0 0% 60%)</code></li>
+                    <li class="swatch swatch--base">Gris de la paleta Sass <code>#777777</code><code>hsl(0 0% 47%)</code></li>
+                    <li class="swatch swatch--body">Texto de cuerpo <code>#666666</code><code>hsl(0 0% 40%)</code></li>
+                    <li class="swatch swatch--footer">Pie de página <code>#333333</code><code>hsl(0 0% 20%)</code></li>
+                    <li class="swatch swatch--black">Negro para sombras <code>#000000</code><code>hsl(0 0% 0%)</code></li>
+                </ul>
+
+                <h3>Degradados</h3>
+                <ul class="swatches">
+                    <li class="swatch swatch--forest">Marca · verde claro → verde oscuro</li>
+                    <li class="swatch swatch--sea">The Sea Explorer · ámbar → naranja</li>
+                    <li class="swatch swatch--snow">The Snow Adventurer · azul → violeta</li>
+                </ul>
+                <p>Los tours y los fondos usan una diagonal hacia abajo y a la derecha. Los títulos de sección usan el verde en horizontal; sobre las fotos del hero y de beneficios el degradado lleva un 80 % de opacidad.</p>
+            </section>
+
+            <section class="guide-section" id="tipografia">
+                <h2>Tipografía</h2>
+                <p>Lato con <code>sans-serif</code> como alternativa. El original usa una altura de línea base de <code>1.7</code>. Las equivalencias de abajo corresponden a escritorio a 1440 px (raíz de 10 px).</p>
+                <div class="type-hero">
+                    <p class="type-hero__headline" lang="en">Outdoors</p>
+                    <p class="type-hero__tagline" lang="en">Is where life happens</p>
+                </div>
+                <p>Hero: <code>6rem</code> (60 px), peso 400, tracking de 35 px. Subtítulo: <code>2rem</code> (20 px), peso 700, tracking de 17.4 px. En móvil: título de <code>5rem</code> y tracking de <code>1rem</code> / <code>0.5rem</code>, respectivamente.</p>
+                <p class="type-section" lang="en">Most popular tours</p>
+                <p>Título de sección: <code>3.5rem</code> (35 px), peso 700, mayúsculas y tracking de 2 px. Baja a <code>2.5rem</code> en tableta vertical y <code>2rem</code> en móvil.</p>
+                <p class="type-subhead" lang="en">Start booking now</p>
+                <p>Subtítulo: <code>1.6rem</code> (16 px), peso 700 y mayúsculas. Cuerpo: <code>1.6rem</code> (16 px), peso 400. Título de tour: <code>2.8rem</code>, peso 300; precio: <code>6rem</code>, peso 100.</p>
+            </section>
+
+            <section class="guide-section" id="espaciado">
+                <h2>Espaciado y adaptación</h2>
+                <p>El original no define una escala global: estas son medidas recurrentes extraídas del Sass.</p>
+                <dl class="guide-metrics">
+                    <div><dt>1.5 / 2rem</dt><dd>Separación de subtítulos y campos.</dd></div>
+                    <div><dt>3rem</dt><dd>Margen interior lateral de secciones y marco exterior del sitio en escritorio.</dd></div>
+                    <div><dt>6 / 8rem</dt><dd>Separación frecuente entre columnas y debajo de títulos de sección.</dd></div>
+                    <div><dt>114rem</dt><dd>Ancho máximo de contenido; 1140 px con la raíz de escritorio.</dd></div>
+                </dl>
+                <h3>Puntos de quiebre del original</h3>
+                <div class="guide-table">
+                    <table>
+                        <thead><tr><th scope="col">Consulta</th><th scope="col">Raíz*</th><th scope="col">Cambios visibles</th></tr></thead>
+                        <tbody>
+                            <tr><th scope="row">≤ 37.5em (600 px)</th><td>50 % (8 px)</td><td>Beneficios en una columna; títulos y espacios más compactos.</td></tr>
+                            <tr><th scope="row">≤ 56.25em (900 px)</th><td>50 % (8 px)</td><td>Sin marco exterior; tours en una columna, beneficios en dos hasta el quiebre móvil.</td></tr>
+                            <tr><th scope="row">≤ 75em (1200 px)</th><td>56.25 % (9 px)</td><td>Menor separación entre las tres columnas de tours.</td></tr>
+                            <tr><th scope="row">Por defecto</th><td>62.5 % (10 px)</td><td>Marco de 3rem; tres columnas de tours y cuatro de beneficios.</td></tr>
+                            <tr><th scope="row">≥ 112.5em (1800 px)</th><td>75 % (12 px)</td><td>Las medidas en rem aumentan.</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                <p>* Equivalencias en px con el tamaño predeterminado del navegador en 16 px. Las caras de las tarjetas dependen de <code>hover</code>, no solo del ancho.</p>
+            </section>
+
+            <section class="guide-section" id="componentes">
+                <h2>Componentes</h2>
+                <h3>Botones y enlaces</h3>
+                <div class="component-stage component-stage--actions" lang="en">
+                    <button class="tour-button tour-button--white" type="button">Discover our tours</button>
+                    <button class="tour-button" type="button">Next step →</button>
+                </div>
+                <div class="component-stage">
+                    <a class="tour-link" href="#capturas" lang="en">Learn more →</a>
+                </div>
+                <p>Botones en forma de píldora, con mayúsculas y elevación al pasar el cursor. El enlace de texto se invierte a blanco sobre verde al pasar el cursor.</p>
+
+                <h3>Tarjeta de tour</h3>
+                <div class="card-pair">
+                    <figure class="card-pair__example">
+                        <div class="tour-card" lang="en">
+                            <h4 class="tour-card__heading"><span>The Sea Explorer</span></h4>
+                            <ul class="tour-card__details">
+                                <li>3 day tours</li>
+                                <li>Up to 30 people</li>
+                                <li>2 tour guides</li>
+                                <li>Sleep in cozy hotels</li>
+                                <li>Difficulty: easy</li>
+                            </ul>
+                        </div>
+                        <figcaption>Anverso · foto, título y detalles</figcaption>
+                    </figure>
+                    <figure class="card-pair__example">
+                        <div class="tour-card tour-card--back" lang="en">
+                            <p class="tour-card__price-label">Only</p>
+                            <p class="tour-card__price">$297</p>
+                            <button class="tour-button tour-button--white" type="button">Book now!</button>
+                        </div>
+                        <figcaption>Reverso · degradado, precio y reserva</figcaption>
+                    </figure>
+                </div>
+                <p>La guía muestra ambas caras sin interacción. En el original, el giro dura <code>0.8s</code> con ratón; en dispositivos sin <code>hover</code>, el precio y la reserva quedan debajo de los detalles.</p>
+
+                <h3>Formulario de reserva</h3>
+                <div class="component-stage component-stage--booking">
+                    <div class="booking-demo" lang="en">
+                        <label class="booking-demo__field">
+                            <input class="booking-demo__input" type="text" placeholder="Full name" />
+                            <span class="booking-demo__label">Full name</span>
+                        </label>
+                        <label class="booking-demo__field">
+                            <input class="booking-demo__input" type="email" placeholder="Email address" required />
+                            <span class="booking-demo__label">Email address</span>
+                        </label>
+                        <fieldset class="booking-demo__options">
+                            <legend>Tour group size</legend>
+                            <label class="booking-demo__option"><input type="radio" name="tour-size" checked /> Small tour group</label>
+                            <label class="booking-demo__option"><input type="radio" name="tour-size" /> Large tour group</label>
+                        </fieldset>
+                    </div>
+                </div>
+                <p>Prueba los campos: el borde inferior indica foco en verde y un correo inválido en naranja. En el original, la etiqueta visual aparece al escribir; aquí permanece visible.</p>
+            </section>
+
+            <section class="guide-section" id="capturas">
+                <h2>Capturas del original</h2>
+                <ul class="guide-links">
+                    <li><a href="../references/01-escritorio-1440x900.png">Página completa · escritorio (1440 × 900)</a></li>
+                    <li><a href="../references/02-tableta-768x1024.png">Página completa · tableta (768 × 1024)</a></li>
+                    <li><a href="../references/03-movil-390x844.png">Página completa · móvil (390 × 844)</a></li>
+                    <li><a href="../references/04-menu-abierto.png">Menú abierto</a></li>
+                    <li><a href="../references/05-tours-anverso.png">Tarjetas de tours · anverso</a></li>
+                    <li><a href="../references/06-tours-reverso.png">Tarjeta de tour · reverso</a></li>
+                    <li><a href="../references/07-modal-reserva.png">Modal de reserva</a></li>
+                </ul>
+            </section>
+
+        </main>
+    </body>
+</html>
