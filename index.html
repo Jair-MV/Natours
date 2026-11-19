@@ -29,7 +29,7 @@
         <script src="js/script.js" defer></script>
     </head>
 
-    <body>
+    <body id="top">
         <a class="skip-link" href="#content">Skip to content</a>
 
         <header class="site-header">
@@ -388,6 +388,44 @@
             </div>
         </dialog>
 
-        <footer></footer>
+        <footer class="site-footer">
+            <a class="site-footer__brand" href="#top" aria-label="Natours — back to top">
+                <picture>
+                    <source
+                        media="(max-width: 600px)"
+                        srcset="assets/logo-green-small-1x.png 1x, assets/logo-green-small-2x.png 2x"
+                        width="150"
+                        height="30"
+                    />
+                    <img
+                        class="site-footer__logo"
+                        src="assets/logo-green-1x.png"
+                        srcset="assets/logo-green-1x.png 1x, assets/logo-green-2x.png 2x"
+                        width="150"
+                        height="119"
+                        alt="Natours"
+                        loading="lazy"
+                    />
+                </picture>
+            </a>
+
+            <div class="site-footer__layout">
+                <nav class="site-footer__nav" aria-label="Footer navigation">
+                    <ul class="site-footer__links" role="list">
+                        <li><a class="site-footer__link" href="#about">Company</a></li>
+                        <li><span>Contact us</span></li>
+                        <li><span>Carrers</span></li>
+                        <li><span>Privacy policy</span></li>
+                        <li><span>Terms</span></li>
+                    </ul>
+                </nav>
+
+                <p class="site-footer__credit">
+                    Original design by <a class="site-footer__link" href="https://github.com/jonasschmedtmann">Jonas Schmedtmann</a>
+                    for his <a class="site-footer__link" href="https://www.udemy.com/course/advanced-css-and-sass/">Advanced CSS and Sass</a>
+                    course. &copy; Jonas Schmedtmann. This reimplementation is an educational project.
+                </p>
+            </div>
+        </footer>
     </body>
 </html>

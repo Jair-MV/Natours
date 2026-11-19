@@ -1,0 +1,112 @@
+@use "../abstracts/variables" as vars;
+
+.site-footer {
+    padding: 10rem var(--layout-gutter);
+
+    font-size: 1.4rem;
+    color: hsl(var(--clr-border));
+
+    background: hsl(var(--clr-footer));
+
+    @media (width <= vars.$bp-phone) {
+        padding: 8rem var(--layout-gutter);
+    }
+}
+
+.site-footer__brand {
+    display: block;
+
+    width: 15rem;
+    margin: 0 auto 6rem;
+}
+
+.site-footer__logo {
+    width: 100%;
+    height: auto;
+}
+
+.site-footer__layout {
+    --footer-column-width: 43.4rem;
+
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: start;
+    gap: 3rem;
+
+    max-width: var(--layout-max-width);
+    margin: 0 auto;
+
+    @media (width <= vars.$bp-tablet-portrait) {
+        grid-template-columns: minmax(0, 1fr);
+        justify-items: center;
+        gap: 5rem;
+
+        max-width: 70rem;
+
+        text-align: center;
+    }
+}
+
+.site-footer__nav {
+    justify-self: start;
+
+    max-width: var(--footer-column-width);
+    width: 100%;
+    padding-top: 2rem;
+
+    border-top: 1px solid hsl(var(--clr-border) / 65%);
+
+    @media (width <= vars.$bp-tablet-portrait) {
+        justify-self: center;
+    }
+}
+
+.site-footer__links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 1rem 1.5rem;
+
+    text-transform: uppercase;
+
+    @media (width <= vars.$bp-tablet-portrait) {
+        justify-content: center;
+    }
+}
+
+.site-footer__credit {
+    justify-self: end;
+
+    max-width: var(--footer-column-width);
+    padding-top: 2rem;
+
+    border-top: 1px solid hsl(var(--clr-border) / 65%);
+
+    @media (width <= vars.$bp-tablet-portrait) {
+        justify-self: center;
+    }
+}
+
+.site-footer__link {
+    display: inline-block;
+
+    text-transform: uppercase;
+
+    transition: color 0.2s, transform 0.2s, box-shadow 0.2s;
+
+    &:hover {
+        color: hsl(var(--clr-primary-light));
+
+        @media (hover: hover) and (prefers-reduced-motion: no-preference) {
+            background: hsl(var(--clr-footer));
+            box-shadow: 0 1rem 2rem hsl(var(--clr-neutral-min) / 40%);
+
+            transform: rotate(5deg) scale(1.15);
+        }
+    }
+}
+
+.site-footer__brand:focus-visible,
+.site-footer__link:focus-visible {
+    outline-color: hsl(var(--clr-primary-light));
+}
