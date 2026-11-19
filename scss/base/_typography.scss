@@ -1,0 +1,38 @@
+@use "../abstracts/variables" as vars;
+
+.section-heading {
+    font-size: var(--fs-section-title);
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: hsl(var(--clr-primary-dark));
+    text-transform: uppercase;
+
+    transition: transform 0.2s, text-shadow 0.2s;
+
+    @supports (background-clip: text) {
+        color: transparent;
+
+        background-image: linear-gradient(to right, hsl(var(--clr-primary-light)), hsl(var(--clr-primary-dark)));
+        background-clip: text;
+    }
+
+    @media (forced-colors: active) {
+        color: CanvasText;
+    }
+
+    @media (width <= vars.$bp-tablet-portrait) {
+        font-size: 2.5rem;
+    }
+
+    @media (width <= vars.$bp-phone) {
+        font-size: 2rem;
+    }
+
+    @media (width > vars.$bp-tablet-portrait) and (hover: hover) and (prefers-reduced-motion: no-preference) {
+        &:hover {
+            text-shadow: 0.5rem 1rem 2rem hsl(var(--clr-neutral-min) / 20%);
+
+            transform: skewX(15deg) skewY(2deg) scale(1.1);
+        }
+    }
+}

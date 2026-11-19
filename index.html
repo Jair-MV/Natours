@@ -61,9 +61,9 @@
                     <!-- These destinations become links as their sections are built. -->
                     <ol class="site-menu__list">
                         <li class="site-menu__item">
-                            <span class="site-menu__label">
+                            <a class="site-menu__label" href="#about">
                                 <span class="site-menu__number" aria-hidden="true">01</span> About Natours
-                            </span>
+                            </a>
                         </li>
                         <li class="site-menu__item">
                             <span class="site-menu__label">
@@ -100,6 +100,66 @@
                         </h1>
 
                         <button class="hero__action tour-button" type="button" disabled>Discover our tours</button>
+                    </div>
+                </div>
+            </section>
+
+            <section class="about" aria-labelledby="about">
+                <h2 class="about__heading section-heading" id="about" tabindex="-1">
+                    Exciting tours for adventurous people
+                </h2>
+
+                <div class="about__layout">
+                    <div class="about__copy">
+                        <h3 class="about__subheading">You're going to fall in love with nature</h3>
+                        <p>
+                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nesciunt id, non quibusdam
+                            harum voluptas quaerat ipsam voluptates maiores repudiandae, accusamus, ullam in
+                            consequuntur quae accusantium obcaecati! Illum laborum enim reiciendis.
+                        </p>
+
+                        <h3 class="about__subheading">Live adventures like you have never before</h3>
+                        <p>
+                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Blanditiis harum maiores
+                            odio, ullam maxime asperiores deserunt commodi! Aliquid facere minus ad libero quis,
+                            hic, facilis eius ex sequi numquam nihil.
+                        </p>
+
+                        <!-- Becomes a link when the Benefits section is available. -->
+                        <span class="about__more">Learn more &rarr;</span>
+                    </div>
+
+                    <div class="photo-composition">
+                        <img
+                            class="photo-composition__image photo-composition__image--valley"
+                            src="assets/nat-1.jpg"
+                            srcset="assets/nat-1.jpg 300w, assets/nat-1-large.jpg 1000w"
+                            sizes="auto, (max-width: 900px) min(33vw, 200px), (min-width: 1800px) 357px, 297px"
+                            width="300"
+                            height="200"
+                            loading="lazy"
+                            alt="Pine trees and granite cliffs reflected in a river"
+                        />
+                        <img
+                            class="photo-composition__image photo-composition__image--road"
+                            src="assets/nat-2.jpg"
+                            srcset="assets/nat-2.jpg 300w, assets/nat-2-large.jpg 1000w"
+                            sizes="auto, (max-width: 900px) min(33vw, 200px), (min-width: 1800px) 357px, 297px"
+                            width="300"
+                            height="200"
+                            loading="lazy"
+                            alt="A cyclist riding through open green hills"
+                        />
+                        <img
+                            class="photo-composition__image photo-composition__image--ridge"
+                            src="assets/nat-3.jpg"
+                            srcset="assets/nat-3.jpg 300w, assets/nat-3-large.jpg 1000w"
+                            sizes="auto, (max-width: 900px) min(33vw, 200px), (min-width: 1800px) 357px, 297px"
+                            width="300"
+                            height="200"
+                            loading="lazy"
+                            alt="A hiker crossing a narrow mountain ridge at sunset"
+                        />
                     </div>
                 </div>
             </section>

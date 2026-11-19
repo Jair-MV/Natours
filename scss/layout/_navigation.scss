@@ -213,6 +213,12 @@ html:has(.site-menu[open]) {
     margin-right: 0.5rem;
 }
 
+a.site-menu__label:focus-visible {
+    color: hsl(var(--clr-footer));
+
+    background-position: 100% 0;
+}
+
 @media (hover: hover) {
     .site-menu__item:hover .site-menu__label {
         color: hsl(var(--clr-primary-dark));

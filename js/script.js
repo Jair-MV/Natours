@@ -2,6 +2,7 @@
 
 const menuButton = document.querySelector("[data-menu-open]");
 const siteMenu = document.querySelector("#site-menu");
+let menuDestination;
 
 menuButton.hidden = false;
 
@@ -11,8 +12,19 @@ menuButton.addEventListener("click", () => {
     menuButton.setAttribute("aria-expanded", "true");
 });
 
+siteMenu.addEventListener("click", (event) => {
+    const link = event.target.closest('a[href^="#"]');
+
+    if (!link || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+
+    menuDestination = document.getElementById(link.hash.slice(1));
+
+    if (menuDestination) siteMenu.close();
+});
+
 siteMenu.addEventListener("close", () => {
     siteMenu.inert = true;
     menuButton.setAttribute("aria-expanded", "false");
-    menuButton.focus();
+    (menuDestination ?? menuButton).focus({ preventScroll: true });
+    menuDestination = null;
 });
