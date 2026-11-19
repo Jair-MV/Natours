@@ -1,0 +1,97 @@
+@use "../abstracts/variables" as vars;
+
+.story-card {
+    position: relative;
+
+    display: flow-root;
+
+    width: 75%;
+    margin: 0 auto;
+    padding: 6rem;
+
+    isolation: isolate;
+
+    &::before {
+        content: "";
+
+        position: absolute;
+        inset: 0;
+        z-index: -1;
+
+        background: hsl(var(--clr-neutral-max) / 60%);
+        border-radius: 3px;
+        box-shadow: 0 3rem 6rem hsl(var(--clr-neutral-min) / 10%);
+
+        transform: skewX(-12deg);
+
+        @media (width <= vars.$bp-phone) {
+            transform: none;
+        }
+    }
+
+    @media (width <= vars.$bp-phone) {
+        width: 100%;
+        padding: 4rem;
+    }
+}
+
+.story-card__portrait {
+    position: relative;
+
+    float: left;
+
+    width: 15rem;
+    height: 15rem;
+    margin-right: 3rem;
+
+    border-radius: 50%;
+    shape-outside: circle(50%);
+    overflow: hidden;
+}
+
+.story-card__photo {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    filter: blur(3px) brightness(70%);
+
+    transition: filter 0.5s, transform 0.5s;
+}
+
+.story-card__caption {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    width: 80%;
+
+    font-size: 1.7rem;
+    color: hsl(var(--clr-neutral-max));
+    text-align: center;
+    text-transform: uppercase;
+
+    transform: translate(-50%, -50%);
+    transition: opacity 0.5s, transform 0.5s;
+}
+
+.story-card__title {
+    margin-bottom: 1.5rem;
+
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .story-card:not(:hover, :focus-within) .story-card__photo {
+        filter: none;
+
+        transform: scale(1.4);
+    }
+
+    .story-card:not(:hover, :focus-within) .story-card__caption {
+        opacity: 0;
+
+        transform: translate(-50%, 20%);
+    }
+}

@@ -46,3 +46,44 @@ bookingDialog.addEventListener("close", () => {
     bookingTrigger?.focus({ preventScroll: true });
     bookingTrigger = null;
 });
+
+const storiesVideo = document.querySelector(".stories__video");
+const storiesVideoControl = document.querySelector("[data-stories-video-control]");
+const storiesVideoAction = storiesVideoControl.querySelector("[data-stories-video-action]");
+const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+let storiesVisible = false;
+let storiesPlaybackPreference;
+
+function syncStoriesPlayback() {
+    const shouldPlay = storiesVisible && (storiesPlaybackPreference ?? !reducedMotion.matches);
+
+    if (shouldPlay) {
+        // Browsers may block autoplay; the Play control remains available.
+        storiesVideo.play().catch(() => {});
+    } else {
+        storiesVideo.pause();
+    }
+}
+
+function updateStoriesVideoControl() {
+    storiesVideoAction.textContent = storiesVideo.paused ? "Play" : "Pause";
+}
+
+storiesVideoControl.hidden = false;
+storiesVideoControl.addEventListener("click", () => {
+    storiesPlaybackPreference = storiesVideo.paused;
+    syncStoriesPlayback();
+});
+storiesVideo.addEventListener("play", updateStoriesVideoControl);
+storiesVideo.addEventListener("pause", updateStoriesVideoControl);
+reducedMotion.addEventListener("change", () => {
+    storiesPlaybackPreference = undefined;
+    syncStoriesPlayback();
+});
+
+const storiesVisibilityObserver = new IntersectionObserver(([entry]) => {
+    storiesVisible = entry.isIntersecting;
+    syncStoriesPlayback();
+});
+
+storiesVisibilityObserver.observe(storiesVideo);

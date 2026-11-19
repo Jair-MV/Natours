@@ -76,9 +76,9 @@
                             </a>
                         </li>
                         <li class="site-menu__item">
-                            <span class="site-menu__label">
+                            <a class="site-menu__label" href="#stories">
                                 <span class="site-menu__number" aria-hidden="true">04</span> Stories
-                            </span>
+                            </a>
                         </li>
                         <li class="site-menu__item">
                             <span class="site-menu__label">
@@ -280,6 +280,58 @@
                 </div>
 
                 <button class="tours__action tour-button tour-button--primary" type="button" disabled>Discover all tours</button>
+            </section>
+
+            <section class="stories" aria-labelledby="stories">
+                <video
+                    class="stories__video"
+                    poster="assets/stories-poster.jpg"
+                    preload="none"
+                    muted
+                    loop
+                    playsinline
+                    aria-hidden="true"
+                >
+                    <source src="assets/video.webm" type="video/webm" />
+                    <source src="assets/video.mp4" type="video/mp4" />
+                </video>
+
+                <h2 class="stories__heading section-heading" id="stories" tabindex="-1">We make people genuinely happy</h2>
+
+                <div class="stories__list">
+                    <article class="story-card" aria-labelledby="story-mary">
+                        <figure class="story-card__portrait" tabindex="0">
+                            <img class="story-card__photo" src="assets/nat-8.jpg" width="2000" height="1333" alt="" loading="lazy" />
+                            <figcaption class="story-card__caption">Mary Smith</figcaption>
+                        </figure>
+                        <h3 class="story-card__title" id="story-mary">I had the best week ever with my family</h3>
+                        <p>
+                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Saepe impedit distinctio
+                            perspiciatis deleniti totam accusantium consectetur velit ut in tempora! Porro
+                            molestiae quasi iusto nobis. Fuga nihil ut recusandae at. Lorem ipsum, dolor sit amet
+                            consectetur adipisicing elit. Culpa sunt enim nobis.
+                        </p>
+                    </article>
+
+                    <article class="story-card" aria-labelledby="story-jack">
+                        <figure class="story-card__portrait" tabindex="0">
+                            <img class="story-card__photo" src="assets/nat-9.jpg" width="2000" height="1376" alt="" loading="lazy" />
+                            <figcaption class="story-card__caption">Jack Wilson</figcaption>
+                        </figure>
+                        <h3 class="story-card__title" id="story-jack">Wow! My life is completely different now</h3>
+                        <p>
+                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Saepe impedit distinctio
+                            perspiciatis deleniti totam accusantium consectetur velit ut in tempora! Porro
+                            molestiae quasi iusto nobis. Fuga nihil ut recusandae at. Lorem ipsum, dolor sit amet
+                            consectetur adipisicing elit. Culpa sunt enim nobis.
+                        </p>
+                    </article>
+                </div>
+
+                <span class="stories__more">Read all stories &rarr;</span>
+                <button class="stories__video-control" type="button" data-stories-video-control hidden>
+                    <span data-stories-video-action>Play</span> background video
+                </button>
             </section>
         </main>
 
