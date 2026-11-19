@@ -31,7 +31,12 @@ siteMenu.addEventListener("close", () => {
 
 const bookingDialog = document.querySelector("#booking-dialog");
 const selectedTour = bookingDialog.querySelector("[data-selected-tour]");
+const bookingHeading = document.querySelector("#booking");
+const bookingForm = bookingHeading.closest("form");
+const bookingTour = bookingForm.querySelector("[data-booking-tour]");
+const bookingStatus = bookingForm.querySelector("[role='status']");
 let bookingTrigger;
+let continuingToBooking = false;
 
 document.querySelectorAll("[data-book-tour]").forEach((button) => {
     button.addEventListener("click", () => {
@@ -42,10 +47,30 @@ document.querySelectorAll("[data-book-tour]").forEach((button) => {
     });
 });
 
-bookingDialog.addEventListener("close", () => {
-    bookingTrigger?.focus({ preventScroll: true });
-    bookingTrigger = null;
+bookingDialog.querySelector("[data-continue-booking]").addEventListener("click", (event) => {
+    if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+
+    bookingTour.textContent = `Selected tour: ${selectedTour.textContent}`;
+    bookingTour.hidden = false;
+    bookingStatus.textContent = "";
+    continuingToBooking = true;
+    bookingDialog.close();
 });
+
+bookingDialog.addEventListener("close", () => {
+    (continuingToBooking ? bookingHeading : bookingTrigger)?.focus({ preventScroll: true });
+    bookingTrigger = null;
+    continuingToBooking = false;
+});
+
+bookingForm.addEventListener("submit", (event) => {
+    event.preventDefault();
+    bookingStatus.textContent = "Details validated. Nothing was sent and no reservation was made.";
+});
+bookingForm.addEventListener("input", () => {
+    bookingStatus.textContent = "";
+});
+bookingForm.querySelector("[type='submit']").disabled = false;
 
 const storiesVideo = document.querySelector(".stories__video");
 const storiesVideoControl = document.querySelector("[data-stories-video-control]");

@@ -58,7 +58,6 @@
                 </form>
 
                 <nav class="site-menu__navigation" aria-label="Main navigation">
-                    <!-- These destinations become links as their sections are built. -->
                     <ol class="site-menu__list">
                         <li class="site-menu__item">
                             <a class="site-menu__label" href="#about">
@@ -81,9 +80,9 @@
                             </a>
                         </li>
                         <li class="site-menu__item">
-                            <span class="site-menu__label">
+                            <a class="site-menu__label" href="#booking">
                                 <span class="site-menu__number" aria-hidden="true">05</span> Book now
-                            </span>
+                            </a>
                         </li>
                     </ol>
                 </nav>
@@ -333,6 +332,40 @@
                     <span data-stories-video-action>Play</span> background video
                 </button>
             </section>
+
+            <section class="booking" aria-labelledby="booking">
+                <div class="booking__card">
+                    <form class="booking-form" aria-describedby="booking-note">
+                        <h2 class="booking-form__heading section-heading" id="booking" tabindex="-1">Start booking now</h2>
+                        <p class="booking-form__selection" data-booking-tour hidden></p>
+
+                        <div class="booking-form__field">
+                            <label for="booking-name">Full name</label>
+                            <input class="booking-form__input" id="booking-name" type="text" autocomplete="name" pattern=".*\S.*" required />
+                        </div>
+                        <div class="booking-form__field">
+                            <label for="booking-email">Email address</label>
+                            <input class="booking-form__input" id="booking-email" type="email" autocomplete="email" required />
+                        </div>
+
+                        <fieldset class="booking-form__groups">
+                            <legend>Tour group size</legend>
+                            <label class="booking-form__option">
+                                <input type="radio" name="group-size" value="small" required />
+                                Small tour group
+                            </label>
+                            <label class="booking-form__option">
+                                <input type="radio" name="group-size" value="large" required />
+                                Large tour group
+                            </label>
+                        </fieldset>
+
+                        <button class="tour-button tour-button--primary" type="submit" disabled>Next step &rarr;</button>
+                        <p class="booking-form__note" id="booking-note">Demo only. Your details won’t be sent and no reservation will be made.</p>
+                        <p class="booking-form__status" role="status"></p>
+                    </form>
+                </div>
+            </section>
         </main>
 
         <dialog class="booking-dialog" id="booking-dialog" aria-labelledby="booking-dialog-title">
@@ -349,7 +382,8 @@
                     </form>
                     <h2 class="section-heading" id="booking-dialog-title">Start booking now</h2>
                     <p class="booking-dialog__selection" data-selected-tour></p>
-                    <p class="booking-dialog__notice">The booking form is not available yet. No reservation has been made.</p>
+                    <p class="booking-dialog__notice">Continue to the demo form to choose a group size. No reservation will be made.</p>
+                    <a class="tour-button tour-button--primary" href="#booking" data-continue-booking>Continue to booking</a>
                 </div>
             </div>
         </dialog>

@@ -349,3 +349,32 @@
     border-radius: 100px;
     cursor: pointer;
 }
+
+.booking {
+    padding: 15rem var(--layout-gutter);
+
+    background-image: linear-gradient(to right bottom, hsl(var(--clr-primary-light)), hsl(var(--clr-primary-dark)));
+
+    @media (width <= vars.$bp-phone) {
+        padding: 8rem var(--layout-gutter);
+    }
+}
+
+.booking__card {
+    max-width: var(--layout-max-width);
+    margin: 0 auto;
+
+    background:
+        linear-gradient(105deg, hsl(var(--clr-neutral-max) / 90%) 0 54%, transparent 54%),
+        url("../assets/nat-10.jpg") center / cover;
+    border-radius: 3px;
+    box-shadow: 0 1.5rem 4rem hsl(var(--clr-neutral-min) / 15%);
+
+    @media (width <= vars.$bp-tablet-portrait) {
+        max-width: 60rem;
+
+        background-image:
+            linear-gradient(hsl(var(--clr-neutral-max) / 90%) 0 100%),
+            url("../assets/nat-10.jpg");
+    }
+}
