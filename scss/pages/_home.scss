@@ -1,1 +1,100 @@
-// Estilos de la página de inicio.
+@use "../abstracts/variables" as vars;
+
+.hero {
+    background: hsl(var(--clr-surface));
+    container-type: inline-size;
+}
+
+.hero__panel {
+    --hero-cut-offset: calc(100cqw * tan(9deg));
+    --hero-image: url("../assets/hero-small.jpg");
+
+    display: grid;
+    place-items: center;
+
+    height: clamp(67.5rem, 95vh, 125.5rem);
+    padding: var(--layout-gutter);
+
+    background:
+        linear-gradient(to right bottom, hsl(var(--clr-primary-light) / 80%), hsl(var(--clr-primary-dark) / 80%)),
+        var(--hero-image) center / cover;
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - var(--hero-cut-offset)), 0 100%);
+
+    @media (resolution >= 2dppx) and (width >= vars.$bp-phone), (width >= 2000px) {
+        --hero-image: url("../assets/hero.jpg");
+    }
+}
+
+.hero__content {
+    display: grid;
+    justify-items: center;
+    gap: 6rem;
+
+    min-width: 0;
+    width: 100%;
+
+    transform: translateY(-100px);
+}
+
+.hero__heading {
+    color: hsl(var(--clr-neutral-max));
+    text-transform: uppercase;
+}
+
+.hero__title,
+.hero__subtitle {
+    display: block;
+}
+
+.hero__title {
+    font-size: var(--fs-hero-title);
+    letter-spacing: 35px;
+
+    animation: hero-enter-left 1s ease-out;
+
+    @media (width <= vars.$bp-phone) {
+        font-size: 5rem;
+        letter-spacing: 1rem;
+    }
+}
+
+.hero__subtitle {
+    font-size: var(--fs-hero-subtitle);
+    font-weight: 700;
+    letter-spacing: 17.4px;
+
+    animation: hero-enter-right 1s ease-out;
+
+    @media (width <= vars.$bp-phone) {
+        letter-spacing: 0.5rem;
+    }
+}
+
+.hero__action {
+    animation: hero-enter-bottom 1s ease-out 0.75s backwards;
+
+    @media (prefers-reduced-motion: reduce) {
+        animation-delay: 0s;
+    }
+}
+
+@keyframes hero-enter-left {
+    from {
+        opacity: 0;
+        transform: translateX(-10rem);
+    }
+}
+
+@keyframes hero-enter-right {
+    from {
+        opacity: 0;
+        transform: translateX(10rem);
+    }
+}
+
+@keyframes hero-enter-bottom {
+    from {
+        opacity: 0;
+        transform: translateY(10rem);
+    }
+}

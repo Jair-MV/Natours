@@ -1,0 +1,29 @@
+@use "../abstracts/variables" as vars;
+
+.site-header {
+    --menu-offset: 6rem;
+
+    position: absolute;
+    top: var(--menu-offset);
+    right: var(--menu-offset);
+    left: var(--menu-offset);
+    z-index: 1;
+
+    display: flex;
+
+    @media (width <= vars.$bp-tablet-portrait) {
+        --menu-offset: 3.5rem;
+
+        top: 4.5rem;
+        left: var(--layout-gutter);
+    }
+}
+
+.site-header__logo {
+    width: auto;
+    height: 3.5rem;
+}
+
+.site-header__brand:focus-visible {
+    outline-color: hsl(var(--clr-neutral-max));
+}

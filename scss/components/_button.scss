@@ -1,0 +1,26 @@
+.tour-button {
+    display: inline-block;
+
+    padding: 1.5rem 4rem;
+
+    font-size: var(--fs-base);
+    line-height: var(--lh-base);
+    color: hsl(var(--clr-base));
+    text-transform: uppercase;
+
+    background: hsl(var(--clr-neutral-max));
+    border: 0;
+    border-radius: 100px;
+
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+    &:not(:disabled) {
+        cursor: pointer;
+    }
+
+    &:not(:disabled):hover {
+        box-shadow: 0 1rem 2rem hsl(var(--clr-neutral-min) / 20%);
+
+        transform: translateY(-3px);
+    }
+}

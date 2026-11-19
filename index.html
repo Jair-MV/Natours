@@ -7,9 +7,12 @@
 
         <title>Natours</title>
 
-        <meta name="description" content="" />
+        <meta
+            name="description"
+            content="Explore Natours’ guided outdoor adventures, from coastal escapes and forest hikes to snowy mountain tours."
+        />
 
-        <meta name="theme-color" content="" />
+        <meta name="theme-color" content="#54C47A" />
 
         <!-- Google Fonts -->
         <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -29,9 +32,78 @@
     <body>
         <a class="skip-link" href="#content">Skip to content</a>
 
-        <header></header>
+        <header class="site-header">
+            <a class="site-header__brand" href="./">
+                <img class="site-header__logo" src="assets/logo-white.png" alt="Natours home" />
+            </a>
 
-        <main id="content"></main>
+            <button
+                class="site-menu__toggle"
+                type="button"
+                aria-label="Open navigation"
+                aria-haspopup="dialog"
+                aria-controls="site-menu"
+                aria-expanded="false"
+                data-menu-open
+                hidden
+            >
+                <span class="site-menu__icon" aria-hidden="true"></span>
+            </button>
+
+            <dialog class="site-menu" id="site-menu" aria-label="Site navigation" inert>
+                <form class="site-menu__close-form" method="dialog">
+                    <button class="site-menu__toggle" type="submit" aria-label="Close navigation" autofocus>
+                        <span class="site-menu__icon site-menu__icon--close" aria-hidden="true"></span>
+                    </button>
+                </form>
+
+                <nav class="site-menu__navigation" aria-label="Main navigation">
+                    <!-- These destinations become links as their sections are built. -->
+                    <ol class="site-menu__list">
+                        <li class="site-menu__item">
+                            <span class="site-menu__label">
+                                <span class="site-menu__number" aria-hidden="true">01</span> About Natours
+                            </span>
+                        </li>
+                        <li class="site-menu__item">
+                            <span class="site-menu__label">
+                                <span class="site-menu__number" aria-hidden="true">02</span> Your benefits
+                            </span>
+                        </li>
+                        <li class="site-menu__item">
+                            <span class="site-menu__label">
+                                <span class="site-menu__number" aria-hidden="true">03</span> Popular tours
+                            </span>
+                        </li>
+                        <li class="site-menu__item">
+                            <span class="site-menu__label">
+                                <span class="site-menu__number" aria-hidden="true">04</span> Stories
+                            </span>
+                        </li>
+                        <li class="site-menu__item">
+                            <span class="site-menu__label">
+                                <span class="site-menu__number" aria-hidden="true">05</span> Book now
+                            </span>
+                        </li>
+                    </ol>
+                </nav>
+            </dialog>
+        </header>
+
+        <main id="content" tabindex="-1">
+            <section class="hero" aria-labelledby="hero-title">
+                <div class="hero__panel">
+                    <div class="hero__content">
+                        <h1 class="hero__heading" id="hero-title">
+                            <span class="hero__title">Outdoors</span>
+                            <span class="hero__subtitle">Is where life happens</span>
+                        </h1>
+
+                        <button class="hero__action tour-button" type="button" disabled>Discover our tours</button>
+                    </div>
+                </div>
+            </section>
+        </main>
 
         <footer></footer>
     </body>

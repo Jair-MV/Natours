@@ -1,3 +1,5 @@
+@use "../abstracts/variables" as vars;
+
 /*
     Just for debugging purposes
 
@@ -24,6 +26,18 @@ html {
     font-size: 62.5%; /* 1rem = 10px */
     scroll-behavior: smooth;
 
+    @media (width <= vars.$bp-tablet-landscape) {
+        font-size: 56.25%;
+    }
+
+    @media (width <= vars.$bp-tablet-portrait) {
+        font-size: 50%;
+    }
+
+    @media (width >= vars.$bp-wide-desktop) {
+        font-size: 75%;
+    }
+
     @media (prefers-reduced-motion: reduce) {
         scroll-behavior: auto;
     }
@@ -31,12 +45,17 @@ html {
 
 body {
     min-height: 100vh;
+    padding: var(--layout-gutter);
 
     font-family: var(--ff-base);
     font-size: var(--fs-base);
     font-weight: 400;
     line-height: var(--lh-base);
     color: hsl(var(--clr-base));
+
+    @media (width <= vars.$bp-tablet-portrait) {
+        padding: 0;
+    }
 }
 
 img,
@@ -71,4 +90,6 @@ textarea {
 }
 
 :focus-visible {
+    outline: 2px solid hsl(var(--clr-footer));
+    outline-offset: 4px;
 }

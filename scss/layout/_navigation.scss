@@ -1,0 +1,227 @@
+html:has(.site-menu[open]) {
+    overflow: hidden;
+}
+
+.site-menu {
+    --menu-origin-x: calc(100% - var(--menu-offset) - 3.5rem);
+    --menu-origin-y: calc(var(--menu-offset) + 3.5rem);
+    --menu-duration: 0.8s;
+
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    display: grid;
+    place-items: safe center;
+
+    width: 100%;
+    height: 100%;
+    max-width: none;
+    max-height: none;
+    margin: 0;
+    padding: calc(var(--menu-offset) + 7rem) 2rem;
+
+    color: hsl(var(--clr-neutral-max));
+
+    background: transparent;
+    border: 0;
+
+    transition:
+        display var(--menu-duration) allow-discrete,
+        overlay var(--menu-duration) allow-discrete;
+    overflow: auto;
+
+    &:not([open]) {
+        display: none;
+
+        pointer-events: none;
+    }
+
+    &::backdrop {
+        background: transparent;
+
+        pointer-events: none;
+    }
+
+    &::before {
+        content: "";
+
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: -1;
+
+        background: radial-gradient(
+            circle 240rem at var(--menu-origin-x) var(--menu-origin-y),
+            hsl(var(--clr-primary-light)),
+            hsl(var(--clr-primary-dark))
+        );
+        clip-path: circle(0 at var(--menu-origin-x) var(--menu-origin-y));
+
+        transition: clip-path var(--menu-duration) cubic-bezier(0.86, 0, 0.07, 1);
+    }
+
+    &[open]::before {
+        clip-path: circle(150vmax at var(--menu-origin-x) var(--menu-origin-y));
+
+        @starting-style {
+            clip-path: circle(0 at var(--menu-origin-x) var(--menu-origin-y));
+        }
+    }
+}
+
+.site-menu__close-form {
+    display: contents;
+}
+
+.site-menu__toggle {
+    position: fixed;
+    top: var(--menu-offset);
+    right: var(--menu-offset);
+
+    display: grid;
+    place-items: center;
+
+    width: 7rem;
+    height: 7rem;
+
+    color: hsl(var(--clr-footer));
+
+    background: hsl(var(--clr-neutral-max));
+    border: 0;
+    border-radius: 50%;
+    box-shadow: 0 1rem 3rem hsl(var(--clr-neutral-min) / 10%);
+    cursor: pointer;
+
+    &[hidden] {
+        display: none;
+    }
+}
+
+.site-menu__icon {
+    position: relative;
+
+    width: 3rem;
+    height: 2px;
+
+    background: currentColor;
+
+    &::before,
+    &::after {
+        content: "";
+
+        position: absolute;
+        left: 0;
+
+        width: 100%;
+        height: 100%;
+
+        background: currentColor;
+
+        transition: transform 0.2s ease;
+    }
+
+    &::before {
+        transform: translateY(-0.8rem);
+    }
+
+    &::after {
+        transform: translateY(0.8rem);
+    }
+}
+
+.site-menu__toggle:hover .site-menu__icon:not(.site-menu__icon--close)::before {
+    transform: translateY(-1rem);
+}
+
+.site-menu__toggle:hover .site-menu__icon:not(.site-menu__icon--close)::after {
+    transform: translateY(1rem);
+}
+
+.site-menu[open] .site-menu__icon--close {
+    background: transparent;
+
+    &::before {
+        transform: rotate(45deg);
+
+        @starting-style {
+            transform: translateY(-0.8rem);
+        }
+    }
+
+    &::after {
+        transform: rotate(-45deg);
+
+        @starting-style {
+            transform: translateY(0.8rem);
+        }
+    }
+}
+
+.site-menu__navigation {
+    opacity: 0;
+
+    transform: translateX(-100vw);
+    transition:
+        opacity var(--menu-duration) ease,
+        transform var(--menu-duration) cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.site-menu[open] .site-menu__navigation {
+    opacity: 1;
+
+    transform: translateX(0);
+
+    @starting-style {
+        opacity: 0;
+
+        transform: translateX(-100vw);
+    }
+}
+
+.site-menu__list {
+    display: grid;
+    justify-items: center;
+    gap: 1rem;
+
+    text-align: center;
+}
+
+.site-menu__label {
+    display: inline-block;
+
+    padding: 1rem 2rem;
+
+    font-size: 3rem;
+    font-weight: 300;
+    text-transform: uppercase;
+
+    background-image: linear-gradient(120deg, transparent 0 50%, hsl(var(--clr-neutral-max)) 50%);
+    background-position: 0 0;
+    background-size: 230%;
+
+    transition:
+        background-position 0.4s ease,
+        color 0.4s ease,
+        transform 0.4s ease;
+}
+
+.site-menu__number {
+    margin-right: 0.5rem;
+}
+
+@media (hover: hover) {
+    .site-menu__item:hover .site-menu__label {
+        color: hsl(var(--clr-primary-dark));
+
+        background-position: 100% 0;
+
+        @media (prefers-reduced-motion: no-preference) {
+            transform: translateX(1rem);
+        }
+    }
+}
