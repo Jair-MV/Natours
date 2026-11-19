@@ -126,20 +126,19 @@ html:has(.site-menu[open]) {
     }
 
     &::before {
-        transform: translateY(-0.8rem);
+        transform: translateY(calc(-1 * var(--menu-icon-spacing, 0.8rem)));
     }
 
     &::after {
-        transform: translateY(0.8rem);
+        transform: translateY(var(--menu-icon-spacing, 0.8rem));
     }
 }
 
-.site-menu__toggle:hover .site-menu__icon:not(.site-menu__icon--close)::before {
-    transform: translateY(-1rem);
-}
-
-.site-menu__toggle:hover .site-menu__icon:not(.site-menu__icon--close)::after {
-    transform: translateY(1rem);
+@media (hover: hover) {
+    .site-menu__toggle:hover,
+    .site-menu__toggle:hover + .site-menu {
+        --menu-icon-spacing: 1rem;
+    }
 }
 
 .site-menu[open] .site-menu__icon--close {
@@ -149,7 +148,7 @@ html:has(.site-menu[open]) {
         transform: rotate(45deg);
 
         @starting-style {
-            transform: translateY(-0.8rem);
+            transform: translateY(calc(-1 * var(--menu-icon-spacing, 0.8rem)));
         }
     }
 
@@ -157,7 +156,7 @@ html:has(.site-menu[open]) {
         transform: rotate(-45deg);
 
         @starting-style {
-            transform: translateY(0.8rem);
+            transform: translateY(var(--menu-icon-spacing, 0.8rem));
         }
     }
 }
