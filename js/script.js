@@ -28,3 +28,21 @@ siteMenu.addEventListener("close", () => {
     (menuDestination ?? menuButton).focus({ preventScroll: true });
     menuDestination = null;
 });
+
+const bookingDialog = document.querySelector("#booking-dialog");
+const selectedTour = bookingDialog.querySelector("[data-selected-tour]");
+let bookingTrigger;
+
+document.querySelectorAll("[data-book-tour]").forEach((button) => {
+    button.addEventListener("click", () => {
+        const tour = button.closest(".tour-card");
+        bookingTrigger = button;
+        selectedTour.textContent = tour.querySelector(".tour-card__title").textContent.trim();
+        bookingDialog.showModal();
+    });
+});
+
+bookingDialog.addEventListener("close", () => {
+    bookingTrigger?.focus({ preventScroll: true });
+    bookingTrigger = null;
+});

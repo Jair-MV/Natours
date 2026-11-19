@@ -1,0 +1,110 @@
+@use "../abstracts/variables" as vars;
+
+html:has(.booking-dialog[open]) {
+    overflow: hidden;
+}
+
+.booking-dialog {
+    width: min(75%, 114rem);
+    max-width: none;
+    max-height: calc(100% - 4rem);
+    margin: auto;
+
+    color: hsl(var(--clr-base));
+
+    background: hsl(var(--clr-neutral-max));
+    border: 0;
+    border-radius: 3px;
+    box-shadow: 0 2rem 4rem hsl(var(--clr-neutral-min) / 20%);
+    overflow: auto;
+
+    &[open] {
+        animation: booking-dialog-enter 0.3s ease-out;
+    }
+
+    &::backdrop {
+        background: hsl(var(--clr-neutral-min) / 80%);
+    }
+
+    @media (width <= vars.$bp-tablet-portrait) {
+        width: min(calc(100% - 4rem), 45rem);
+    }
+}
+
+.booking-dialog__layout {
+    display: grid;
+    grid-template-columns: min(40rem, 38%) minmax(0, 1fr);
+
+    @media (width <= vars.$bp-tablet-portrait) {
+        grid-template-columns: minmax(0, 1fr);
+    }
+}
+
+.booking-dialog__photos {
+    & img {
+        width: 100%;
+        height: auto;
+    }
+
+    @media (width <= vars.$bp-tablet-portrait) {
+        order: 1;
+
+        & img:first-child {
+            display: none;
+        }
+    }
+}
+
+.booking-dialog__content {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    gap: 1rem;
+
+    padding: 5rem;
+
+    @media (width <= vars.$bp-tablet-portrait) {
+        padding: 6rem 3rem 3rem;
+    }
+}
+
+.booking-dialog__close {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+
+    width: 4.4rem;
+    height: 4.4rem;
+
+    font-size: 3rem;
+    line-height: 1;
+    color: hsl(var(--clr-footer));
+
+    background: transparent;
+    border: 0;
+    cursor: pointer;
+
+    &:hover {
+        color: hsl(var(--clr-primary-dark));
+    }
+}
+
+.booking-dialog__selection {
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.booking-dialog__notice {
+    max-width: 55ch;
+}
+
+@keyframes booking-dialog-enter {
+    from {
+        opacity: 0;
+
+        transform: scale(0.8);
+    }
+}

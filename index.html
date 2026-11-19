@@ -71,9 +71,9 @@
                             </a>
                         </li>
                         <li class="site-menu__item">
-                            <span class="site-menu__label">
+                            <a class="site-menu__label" href="#tours">
                                 <span class="site-menu__number" aria-hidden="true">03</span> Popular tours
-                            </span>
+                            </a>
                         </li>
                         <li class="site-menu__item">
                             <span class="site-menu__label">
@@ -99,7 +99,7 @@
                             <span class="hero__subtitle">Is where life happens</span>
                         </h1>
 
-                        <button class="hero__action tour-button" type="button" disabled>Discover our tours</button>
+                        <a class="hero__action tour-button" href="#tours">Discover our tours</a>
                     </div>
                 </div>
             </section>
@@ -214,7 +214,93 @@
                     </ul>
                 </div>
             </section>
+            <section class="tours" aria-labelledby="tours">
+                <h2 class="tours__heading section-heading" id="tours" tabindex="-1">Most popular tours</h2>
+
+                <div class="tours__grid">
+                    <article class="tour-card tour-card--sea" aria-labelledby="tour-sea">
+                        <div class="tour-card__face tour-card__face--front">
+                            <div class="tour-card__photo" aria-hidden="true"></div>
+                            <h3 class="tour-card__title" id="tour-sea"><span>The Sea Explorer</span></h3>
+                            <ul class="tour-card__details" role="list">
+                                <li>3 day tours</li>
+                                <li>Up to 30 people</li>
+                                <li>2 tour guides</li>
+                                <li>Sleep in cozy hotels</li>
+                                <li>Difficulty: easy</li>
+                            </ul>
+                        </div>
+                        <div class="tour-card__face tour-card__face--back">
+                            <p class="tour-card__pricing">Only <span class="tour-card__price">$297</span></p>
+                            <button class="tour-button" type="button" data-book-tour aria-haspopup="dialog" aria-label="Book now: The Sea Explorer">
+                                Book now!
+                            </button>
+                        </div>
+                    </article>
+
+                    <article class="tour-card tour-card--forest" aria-labelledby="tour-forest">
+                        <div class="tour-card__face tour-card__face--front">
+                            <div class="tour-card__photo" aria-hidden="true"></div>
+                            <h3 class="tour-card__title" id="tour-forest"><span>The Forest Hiker</span></h3>
+                            <ul class="tour-card__details" role="list">
+                                <li>7 day tours</li>
+                                <li>Up to 40 people</li>
+                                <li>6 tour guides</li>
+                                <li>Sleep in provided tents</li>
+                                <li>Difficulty: medium</li>
+                            </ul>
+                        </div>
+                        <div class="tour-card__face tour-card__face--back">
+                            <p class="tour-card__pricing">Only <span class="tour-card__price">$497</span></p>
+                            <button class="tour-button" type="button" data-book-tour aria-haspopup="dialog" aria-label="Book now: The Forest Hiker">
+                                Book now!
+                            </button>
+                        </div>
+                    </article>
+
+                    <article class="tour-card tour-card--snow" aria-labelledby="tour-snow">
+                        <div class="tour-card__face tour-card__face--front">
+                            <div class="tour-card__photo" aria-hidden="true"></div>
+                            <h3 class="tour-card__title" id="tour-snow"><span>The Snow Adventurer</span></h3>
+                            <ul class="tour-card__details" role="list">
+                                <li>5 day tours</li>
+                                <li>Up to 15 people</li>
+                                <li>3 tour guides</li>
+                                <li>Sleep in provided tents</li>
+                                <li>Difficulty: hard</li>
+                            </ul>
+                        </div>
+                        <div class="tour-card__face tour-card__face--back">
+                            <p class="tour-card__pricing">Only <span class="tour-card__price">$897</span></p>
+                            <button class="tour-button" type="button" data-book-tour aria-haspopup="dialog" aria-label="Book now: The Snow Adventurer">
+                                Book now!
+                            </button>
+                        </div>
+                    </article>
+                </div>
+
+                <button class="tours__action tour-button tour-button--primary" type="button" disabled>Discover all tours</button>
+            </section>
         </main>
+
+        <dialog class="booking-dialog" id="booking-dialog" aria-labelledby="booking-dialog-title">
+            <div class="booking-dialog__layout">
+                <div class="booking-dialog__photos" aria-hidden="true">
+                    <img src="assets/nat-8.jpg" alt="" width="2000" height="1333" loading="lazy" />
+                    <img src="assets/nat-9.jpg" alt="" width="2000" height="1376" loading="lazy" />
+                </div>
+                <div class="booking-dialog__content">
+                    <form method="dialog">
+                        <button class="booking-dialog__close" type="submit" aria-label="Close booking" autofocus>
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </form>
+                    <h2 class="section-heading" id="booking-dialog-title">Start booking now</h2>
+                    <p class="booking-dialog__selection" data-selected-tour></p>
+                    <p class="booking-dialog__notice">The booking form is not available yet. No reservation has been made.</p>
+                </div>
+            </div>
+        </dialog>
 
         <footer></footer>
     </body>

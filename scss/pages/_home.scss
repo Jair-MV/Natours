@@ -234,3 +234,47 @@
 .benefits__icon-stop--dark {
     stop-color: hsl(var(--clr-primary-dark));
 }
+
+.tours {
+    padding: 6rem var(--layout-gutter) 12rem;
+
+    background: hsl(var(--clr-surface));
+
+    @media (width <= vars.$bp-phone) {
+        padding-bottom: 8rem;
+    }
+}
+
+.tours__heading {
+    width: fit-content;
+    margin: 0 auto var(--space-section-title);
+    scroll-margin-top: var(--layout-gutter);
+
+    text-align: center;
+}
+
+.tours__grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: var(--layout-column-gap);
+
+    max-width: var(--layout-max-width);
+    margin: 0 auto;
+
+    @media (width <= vars.$bp-tablet-landscape) {
+        gap: 2rem;
+    }
+
+    @media (width <= vars.$bp-tablet-portrait) {
+        grid-template-columns: minmax(0, 1fr);
+        gap: var(--layout-column-gap);
+
+        max-width: 50rem;
+    }
+}
+
+.tours__action {
+    display: block;
+
+    margin: 10rem auto 0;
+}
