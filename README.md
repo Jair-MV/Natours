@@ -4,6 +4,8 @@ A rebuild of the Natours adventure travel landing page using HTML, Sass, and van
 
 ![Natours hero with a green mountain backdrop and the “Discover our tours” button](assets/hero-preview.jpg)
 
+[View live site](https://natours-jmv-dev.netlify.app/)
+
 ## Run locally
 
 You’ll need Node.js and npm.
